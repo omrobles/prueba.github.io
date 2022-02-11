@@ -19,7 +19,7 @@ let tasks=[],
     tasksOpen=[];
 
 // Primera lectura de datos del LocalStorage
-readData();
+// readData();
 
 // función para crear nuevas tareas
 createButton.addEventListener("click",function(){
@@ -108,7 +108,7 @@ function storeData(){
 function readData (){
     tasks = JSON.parse(localStorage.getItem('tasksList'));
     list.innerHTML = "<ul></ul>"
-    if(tasks.length != null){
+    if(tasks.length > 0){
         if(checkbox.checked === true){
             tasksOpen.forEach((task) => {
                 list.appendChild(insertLi(task));
