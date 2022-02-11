@@ -19,7 +19,7 @@ let tasks=[],
     tasksOpen=[];
 
 // Primera lectura de datos del LocalStorage
-// readData();
+init();
 
 // función para crear nuevas tareas
 createButton.addEventListener("click",function(){
@@ -89,6 +89,11 @@ cancel.addEventListener('click', function(){
     removeQuestion.setAttribute('class', 'hide');
 });
 
+function init(){
+    tasks = JSON.parse(localStorage.getItem('tasksList'));
+    readData();
+}
+
 // Funcion para empujar datos al array tasks
 function taskPush(){
     tasks.push({
@@ -106,7 +111,11 @@ function storeData(){
 
 // función para desplegar las tareas guardadas
 function readData (){
+<<<<<<< HEAD
+    // tasks = JSON.parse(localStorage.getItem('tasksList'));
+=======
     tasks = JSON.parse(localStorage.getItem('tasksList'));
+>>>>>>> c94b2d55397d5cbaecabdb6c1dfb54d09cba9ec2
     list.innerHTML = "<ul></ul>"
     if(tasks.length > 0){
         if(checkbox.checked === true){
